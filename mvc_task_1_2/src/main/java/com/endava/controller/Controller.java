@@ -43,13 +43,11 @@ public class Controller {
         return "show_form";
     }
 
-    
+
     @RequestMapping(value = "/display", method = RequestMethod.GET)
     public ModelAndView getdata() {
 
-        List<String> list = studentService.getAllStudents();
-        System.out.println(list);
-        //return back to index.jsp
+        List<Student> list = studentService.getAllStudents();
         ModelAndView model = new ModelAndView("proces_form");
         model.addObject("lists", list);
 
