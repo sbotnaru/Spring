@@ -1,11 +1,9 @@
 package com.endava.controller;
 
-import com.endava.enity.Field;
 import com.endava.enity.Student;
 import com.endava.services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -36,8 +34,6 @@ public class Controller {
     public String procesFormVersionTwo(@RequestParam("studentName") String studentName,
                                        @RequestParam("lastName") String lastName, Model theModel) {
 
-        //  studentName = studentName.toUpperCase();
-        //  String result = "Yo " + studentName;
         String firstName=studentName;
         String lastN=lastName;
 
@@ -47,15 +43,7 @@ public class Controller {
         return "show_form";
     }
 
-
-//    @RequestMapping(value = "/display", method = RequestMethod.GET)
-//    public String procesForm(Model theModel ){
-//
-//        theModel.addAttribute("message1", studentService.getAllStudents());
-//
-//        return "proces_form";
-//    }
-
+    
     @RequestMapping(value = "/display", method = RequestMethod.GET)
     public ModelAndView getdata() {
 
@@ -68,26 +56,6 @@ public class Controller {
         return model;
 
     }
-
-//
-//    @RequestMapping(value = "/showForm",method = RequestMethod.GET)
-//    public String showForm() {
-//        return "show_form";
-//    }
-//
-//    @RequestMapping(value = "/procesForm",method = RequestMethod.GET)
-//    public String procesForm() {
-//        return "proces_form";
-//    }
-//
-//    @RequestMapping(value = "/procesFormTwo",method = RequestMethod.GET)
-//    public String procesFormVersionTwo(@RequestParam("studentName")String studentName, Model theModel){
-//
-//
-//        studentName =studentName.toUpperCase();
-//        String  result="Yo "+studentName;
-//        theModel.addAttribute("message",result);
-//        return "helloworld";
 
 }
 
