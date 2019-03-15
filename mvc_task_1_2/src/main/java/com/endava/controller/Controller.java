@@ -34,10 +34,7 @@ public class Controller {
     public String procesFormVersionTwo(@RequestParam("studentName") String studentName,
                                        @RequestParam("lastName") String lastName, Model theModel) {
 
-        String firstName=studentName;
-        String lastN=lastName;
-
-        studentService.add( new Student(firstName, lastN));
+        studentService.add( new Student(studentName, lastName));
         System.out.println(studentService.getAllStudents());
 
         return "show_form";

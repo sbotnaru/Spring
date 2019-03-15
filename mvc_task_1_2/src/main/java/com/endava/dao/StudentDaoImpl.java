@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class DaoClass implements DaoList {
+public class StudentDaoImpl implements StudentDao {
 
 List<Student> list =new ArrayList<>();
 

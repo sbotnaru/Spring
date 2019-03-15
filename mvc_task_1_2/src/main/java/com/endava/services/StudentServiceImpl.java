@@ -1,6 +1,6 @@
 package com.endava.services;
 
-import com.endava.dao.DaoList;
+import com.endava.dao.StudentDao;
 import com.endava.enity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,27 +12,27 @@ import java.util.List;
 public class StudentServiceImpl implements StudentService {
 
     @Autowired
-    DaoList daoList;
+    StudentDao studentDao;
 
     @Override
 
     public void add(Student student) {
-        daoList.add(student);
+        studentDao.add(student);
     }
 
     @Override
     public List<Student> getAllStudents() {
         List<String> helpList=new ArrayList<>();
-        for (int i = 0; i <daoList.getSizeOfList() ; i++) {
-            helpList.add(String.valueOf(daoList.getById(i)));
+        for (int i = 0; i < studentDao.getSizeOfList() ; i++) {
+            helpList.add(String.valueOf(studentDao.getById(i)));
         }
 
 
-        return daoList.getAllStudents();
+        return studentDao.getAllStudents();
     }
 
     @Override
     public Student getStudentById(int id) {
-        return daoList.getById(id);
+        return studentDao.getById(id);
     }
 }

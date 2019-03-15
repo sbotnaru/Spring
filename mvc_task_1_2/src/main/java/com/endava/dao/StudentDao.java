@@ -4,7 +4,7 @@ import com.endava.enity.Student;
 
 import java.util.List;
 
-public interface DaoList {
+public interface StudentDao {
 
     public void  add(Student student);
     public List<Student> getAllStudents();
