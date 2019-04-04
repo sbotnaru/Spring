@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
     <title>Input form</title>
@@ -33,6 +34,10 @@
         <input type="submit">
     </form>
     <a  href="/mvc_test_no_xml_war_exploded/">Go back ->></a>
+    <form:form action="${pageContext.request.contextPath}/logout" method="post">
+
+<input type="submit" value="Logout">
+    </form:form>
 </center>
 </body>
 </html>

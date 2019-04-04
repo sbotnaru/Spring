@@ -1,3 +1,5 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <html>
 <head>
     <style>
@@ -34,10 +36,22 @@
 <body>
 
 
+<p>
+    User:<security:authentication property="principal.username"/>
+    <br><br>
+    User role:<security:authentication property="principal.authorities"/>
+</p>
 <center>
-<h2>Choose what you want to do?</h2>
-<button class="button1" onclick="window.location.href = 'showForm';">INSERT DATA</button >
+<h2>Choose what you want to do? Bro</h2>
+<button class="button1" onclick="window.location.href = ' showForm';">INSERT DATA (ONLY FOR ADMIN)</button >
     <button class="button1" onclick="window.location.href = 'display';">DISPLAY DATA</button>
+
+    <form:form action="${pageContext.request.contextPath}/logout" method="post">
+
+        <input type="submit" value="Logout">
+    </form:form>
 </center>
+
+
 </body>
 </html>
